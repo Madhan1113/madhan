@@ -1,0 +1,16 @@
+custom vpc creating 
+
+1. select the region 
+2. create a vpc : VPC-A 
+     10.0.0.0/16
+3. create availibility zone - subnet 
+    VPC-A-subnet 1 - 10.0.1.0/24
+    VPC-A-subnet 2 - 10.0.2.0/24
+4. create routing table 
+     VPC-A-rt1-- public - 10.0.1.0/24
+     VPC-A-rt2 -private - 10.0.2.0/24
+5. internet gateway - VPC-A-IGW
+
+Edit route in route table as 0.0.0.0 and give VPC IGW save 
+
+Launch EC2
