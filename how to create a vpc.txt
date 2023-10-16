@@ -1,7 +1,7 @@
 custom vpc creating 
 
 1. select the region 
-2. create a vpc : VPC-A 
+2. create a vpc : VPC-A (CIDR size 16 to 28 ) 
      10.0.0.0/16
 3. create availibility zone - subnet 
     VPC-A-subnet 1 - 10.0.1.0/24
