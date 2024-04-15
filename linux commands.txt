@@ -1,0 +1,272 @@
+whoami - tells ur username
+ifconfig - to know the ip address
+/etc/init.d/networking restart -  to restart the network
+cat /etc/resolve.conf - to edit the dns server
+/etc/network/interfaces - to check the network
+sudo - privilage to user for specifi task for normal user
+su - switch user
+sudo passwd user_name - to set the password
+hostnamectl - to see the hostname
+getent passwd domain_ID - to know the id joined in AD
+date - display date
+tty - display terminal
+tty -a - terminal info
+tty -s - exit
+tty --help -  to know more about it
+df - display file system information
+df -h - detailed info
+df -ih - to display inodes
+free - to display memory breakup information
+free -m - to display in megabytes
+free -k - to display in kilobytes
+top - to load info of our system running tasks and processes
+uname - os version system architect
+uname -a - system info in specific order
+uname -s - kernal name (linux)
+uname -n - host name (ubuntu-node1)
+uname -r - kernal version
+uname -v - current kernal version
+uname -m - machine hardware info (*86 *64)
+man cat - info of cat commands (man - manual display man pages)
+lsb_release -a - To verify the version of the linux installation
+du -sh/var/cache/apt/archives - to see the caches
+apt-get clean - clean the caches
+sudo resolvectl flush-caches
+apt-get remove - clean the unused packages
+apt-get purge - to uninstall the software
+apt-get update - to get all the packages
+apt-get upgrade - to upgrade all the packages
+apt-get install -f - force install
+dpkg -i package_name - to install the softwares
+systemd-analyze blame - to know all the running services
+sudo systemctl disable some-time-eater-service.service --now - to disavle time eating services
+apt-get install bum - to install boot up manager
+sudo gedit /etc/default/grub & sudo update-grub - to change the boot time and update it.
+apt install preload - to speed up the app load time
+apt-get install apt-fast - to install package manager
+sudo apt install tlp tlp-rdw & sudo tlp start - to reduce overheating and get better system performance
+apt install bleachbit - to Clean unused temp and log files with BleachBit
+apt install zram-config - to start compressing some of its contents without having to turn to swap space on your storage devices
+apt install make schedtool - If its installation fails because of dependencies
+init 0 - shutdown
+init 6 - restart
+
+
+pwd (present working dir) - display current path
+cd (change dir) - change directory
+cd /var/www/html
+cd.. - go back one folder 
+ls - list all directories and files
+ls -l - list the contents of directories
+ls -il - to list the file permission with eye node number (eye node numbers - unique nos assigned for the files to access)
+ls -ild - to list directories
+ls -ild /tmp/d1 - to list a particular folder inside the directory
+touch file_name - create a new file in a directory
+mkdir (make dir) - create new folder/dir
+mkdir -p dir1/dir2/dir3 - to create new directories inside parent directory\
+diff file_name file_name2 - to see the differences
+echo "content" >> file_name - to display a line of a content
+cat file_name - to open the file
+cp -i f1 f1_new - to overwrite the existin files
+cat >file_name - to overwrite/ to write/ to create in new file
+cat >>file_name - to append to already existing content
+cat /etc/grp - to list the group
+cat /etc/passwd - to list the user
+cat /tmp/sc1/mysc1 - soft link (to find the sc1)
+ln file_name new_name - hard link (both the files have same content bcoz if someone who accidently deletes the files, used to retrieve it)
+id -a group_name - to check group id
+useradd user_name - to add the user
+useradd -G group_name user_name - to add user in the group
+userdel user_name - to delete the user
+userdel -r user_name - to delete the user
+groupadd group_name - to add the group
+groupdel group_name - to delete the group
+grep group_name /etc/group - to see the group file of a user
+usermod -G group_name1 group_name2 - to change the user from group1 to group2
+sudo hostnamectl set-hostname MOB-CJB-WS1-122 - to set hostname
+sudo apt -y install realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit - to install AD packages
+sudo realm discover domain_service name - to discover Active Directory domain
+sudo realm join domain_service name -U domain_admin - Join Ubuntu To AD domain
+realm list - to View current realmd details
+sudo pam-auth-update - to update pam
+systemctl status sssd - to restart the service
+
+
+
+vi file_name - to edit the contents (i to insert mode, esc to command mode, w to save, :wq! to exit)
+yy - to copy the line in vi editor
+dd - to cut the line in vi editor
+p - paste the line in vi editor
+:set nu - to set numbers to lines
+x - to delete a character in vi editor
+esc u - to undo
+dw - delete a word
+dd - delete entire line
+/type_word - to search a word in command mode
+:s/root/Root - to replace a word
+h-left,j-down,k-up,l-right
+esc 10 - to jump to 10th line
+shift ctrl 4 - to jump forward
+esc shift g - last line
+esc gg - first line
+grep(global regular expression print) - to find patterns in given file
+egrep - extended version of grep
+
+
+
+chmod 777 file_name - to change the permissions                                                                owner       groups       others
+chown root:root file_name - to change the owner                                                                r w x       r w x        r w x 
+cp  source_file  destination_file - to copy the files                                                          4 2 1       4 2 1        4 2 1
+cp -r d1 d2 - to copy one directory to another directory  (-r means recursive)                                    
+mv f1/tmp (f1-file_name, tmp-folder_name) - to move the file to the folder
+mv d1/tmp (d1-directory_name tmp-folder_name) - to move the directory to the folder
+mv f1/tmp/f1_new - moving while rename the file
+mv old_name new_name - to rename a file
+mv d1 d1_new (d1-directory1 d1_new- renamed directory1) - to rename a directory
+rm file_name - to remove a file
+rmdir directory_name - to remove a directory
+rm -f directory_name - to forcefull delete  
+ls --help
+ping google.com
+ssh ip_address@user_name - to take ssh of another machine
+clear - clear screen
+history - list all the commands
+1! - to get first command from history
+exit - to exit the terminal
+
+
+
+
+(Git Commands)
+git --version - to know the version
+sudo apt-get update - to update the packages
+sudo apt-get upgrade - to upgrade the packages
+sudo apt-get install git - to install git
+git status - to know the status of file
+git add file_name - to add a file
+git commit -m "changes" - to make changes to a file
+git push - to push changes to the repo
+git push -u origin main - to push changes from new repo to the main repo
+git branch - to list all branches in your repo
+git branch branch_name - to create a branch
+git branch -m branch_name - to rename branch
+git branch -d branch_name - to delete branch
+git checkout branch_name - to switch to new branch
+git merge branch_name - to merge the new branch to main branch
+git clone url - To clone git repo and local repo
+
+(To create a new repository)
+
+echo "# new-repository" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/naveenraj8496/new-repository.git
+git push -u origin main
+
+(To push an repository)
+
+git remote add origin https://github.com/naveenraj8496/new-repository.git
+git branch -M main
+git push -u origin main
+
+
+(Java Commands)
+java -version - to know the version
+sudo apt-get install openjdk-8-jdk - to install java
+sudo apt-get install openjdk-8-jre - to install java
+
+
+(Maven Commands)
+mvn -v - to know the version
+sudo apt-get update - to update the packages
+sudo apt-get install maven - to install maven
+
+
+(Jenkins Commands)
+jenkins --version - to know the version
+sudo apt-get update - to update the packages
+sudo apt-get install jenkins - to install jenkins
+
+
+(Node JS Commands)
+node -v - to know the version
+sudo apt-get update - to update the packages
+sudo apt-get install nodejs - to install nodeJS
+
+
+(Docker Commands)
+sudo docker --version - to know the version
+sudo apt-get update - to update the packages
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - to download docker from the web and adding the key
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get install docker-ce (or) sudo snap install docker - to install the docker 
+sudo docker run hello-world - to run a hello world message
+sudo docker chmod 666 /var/run/docker.sock - to get permission to connect to docker daemon socket
+sudo docker login - to login docker account
+
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y nginx
+COPY index.nginx-debian.html /var/www/html
+CMD nginx -g 'daemon off;'
+
+docker image build . - to create an image
+docker images - to check all existing Docker images on Docker hosts 
+docker image history - to display an image history
+docker image inspect - to display the info of one or more images
+docker image prune - to remove unused docker images
+docker image pull <image_name>:<tag> - to pull a Docker image from either Docker Hub or private repository
+docker image push <image_name>:<tag> - to push a docker image or a repository to a registry 
+docker search <image_name> - to get the image name from Docker Hub 
+docker image rm <image_name>:<tag> - to remove Docker image
+docker image save <image_name>:<tag> -o <tar_filename> - to export Docker images to tar file
+docker load –I <tar_filename> - to import docker images with layers from tar files
+docker run -dt -p 80:80 nginx - to create a new container from the nginx image
+docker run –it --name=Test_1 ubuntu - to start container in interactive mode
+docker run -i -t ubuntu/bin/bash - runs an ubuntu container, connects to local CLI, executes bin/bash
+docker ps - to list all running containers
+docker ps -a - to list all the containers started and the once which are stopped
+docker ps -aq - to list the containers by their ID
+docker ps -s - to list the total file size of each container
+docker ps -l - to list the latest created containers
+docker start <container_name> or <container_ID> - to start the container service
+docker stop <container_name> or <container_ID> - to stop the container service
+docker container rm <container_name> - to delete the container
+docker compose build - build or rebuild services
+docker compose create - to create containers for service
+docker compose up - to start and create containers
+docker compose down - to stop and remove containers and networks
+docker compose kill - to force stop service containers
+docker compose ps - to list containers
+docker compose ls - to list running compose projects
+docker compose start - to start the services
+docker compose pause - to pause the services
+docker compose stop - to stop the services
+docker compose restart - to restart containers
+docker compose rm - to remove stopped service containers
+
+
+(Ansible Commands)
+ansible --version - to know the version
+sudo apt-get install -f
+sudo apt-get install software-properties-common
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt-get update - to update the packages
+sudo apt-get install ansible - to install ansible
+
+
+(Python Commands)
+python --version - to check the version
+sudo apt-get update - to update the packages
+sudo apt-get install python - to install python
+python3 --version - to check the version
+sudo apt-get update - to update the packages
+sudo apt-get install python3 - to install python
+
+
+https://github.com/mukesh-cel/project
+
+

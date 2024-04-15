@@ -1,0 +1,163 @@
+du -sh /var/cache/apt/archives - to see the caches
+
+dmidecode && dmidecode -t2 - to see system info
+
+apt-get clean - to clean the caches
+apt-get autoclean
+
+sudo resolvectl flush-caches
+
+echo 1 > /proc/sys/vm/drop_caches - clear caches
+echo 2 > /proc/sys/vm/drop_caches - clear caches
+echo 3 > /proc/sys/vm/drop_caches - clear caches
+
+apt install dbus - x11 - to hide user list in login screen in ubuntu 22.04
+
+apt install preload - to load faster for application start up
+
+apt install indicator-cpufreq - to indicate cpu usage
+
+apt install zram-config - to cool down RAM 
+
+apt install make schedtool - to install missing packages
+
+sudo vim /etc/gdm3/greeter.dconf-defaults - to see the default display manager
+
+systemctl status display-manager - to see the status of default display manager 
+
+sudo dpkg-reconfigure gdm3 - to change the gnome display manager
+
+gpasswd -d <user> <group> - to remove user from the group
+usermod -aG <group> <user> - to add user to the group
+
+(To hide user list in login screen)
+xhost SI:localuser:gdm
+sudo -u gdm gsettings set org.gnome.login-screen disable-user-list true
+
+(To join AD)
+rm -f /etc/resolv.conf
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+apt install -y realmd sssd sssd-tools libnss-sss libpam-sss krb5-user adcli samba-common-bin
+pam-auth-update
+realm discover
+realm join mobiusservices.in -U cjbadmin
+vim /etc/sssd/sssd.conf 
+systemctl restart sssd
+
+(To install samba)
+apt install samba
+vim /etc/samba/smb.conf
+Client min protocol = NT1
+Client min protocol = core
+service smbd restart
+
+(To enable root login)
+apt-get install ssh
+vim /etc/ssh/sshd_config
+PermitRootLogin yes
+PermitRootLogin prohibit-password
+service ssh restart
+
+(USB block command in ubuntu)
+vim /etc/modprobe.d/blacklist.conf
+blacklist amd76x_edac
+blacklist uas
+blacklist usb_storage
+
+(Decrease booting time)
+gedit /etc/default/grub
+update-grub
+
+(Kill time consuming services)
+systemd-analyze blame
+sudo systemctl disable some-time-eater-service.service --now
+systemctl mask <SERVICE-NAME>
+
+(Installing apt-fast package manager)
+add-apt-repository ppa:apt-fast/stable
+apt update
+apt-get install apt-fast
+
+(To reduce CPU overheat)
+apt install tlp tlp-rdw
+apt update
+tlp start
+
+(wps install)
+sudo apt update
+sudo apt install snapd
+sudo snap install wps-office-all-lang-no-internet
+
+(VPN install)
+add-apt-repository ppa:yuezk/globalprotect-openconnect
+apt-get update
+apt install globalprotect-openconnect
+
+(dpkg fix)
+rm /var/lib/dpkg/lock-frontend
+rm /var/lib/apt/lists/lock
+rm /var/cache/apt/archives/lock
+rm /var/lib/dpkg/lock
+dpkg --configure -a
+
+(missing packages fix)
+apt-get update --fix-missing
+apt --fix-broken install
+apt-get install -f
+dpkg --remove -force --force-remove-reinstreq Package_Name
+apt-get clean
+apt-get remove
+apt-get update
+
+
+
+apt-get purge libreoffice-math
+apt-get purge libreoffice-draw
+apt-get purge libreoffice-impress
+apt-get purge libreoffice-writer
+apt-get purge cheese
+apt-get purge shotwell
+apt-get remove totem-gstreamer totem-common
+apt-get purge aisleriot
+apt-get purge simple-scan
+apt-get remove gnome-mahjongg
+apt-get remove gnome-mines
+apt-get purge rhythmbox
+apt-get purge thunderbird
+apt-get purge transmission-gtk
+apt-get purge aisleriot gnome-sudoku mahjongg ace-of-penguins gnomine gbrainy gnome-mines	
+
+apt-get remove kde*
+apt-get remove kde-plasma-desktop*
+apt-get remove plasma-desktop kubuntu-desktop
+apt-get autoremove
+apt-get purge kde-plasma-desktop
+apt-get autoremove --purge kde-plasma-desktop
+apt-get remove dolphin
+
+
+vim clearcache.sh
+#!/bin/bash
+echo 1 > /proc/sys/vm/drop_caches
+chmod 755 clearcache.sh
+crontab -e
+0  2  *  *  *  /path/to/clearcache.sh
+
+
+// Display the JDK version
+javac -version
+javac 17.0.1
+
+// Display the JRE version
+java -version
+java version "17.0.1" 2021-10-19 LTS
+Java(TM)
+SE Runtime Environment (build 17.0.1+12-LTS-39)
+Java HotSpot(TM)
+64-Bit Server VM (build 17.0.1+12-LTS-39, mixed mode, sharing)
+
+pycharm --version
+python --version
+python3 --version
+php -v
+
